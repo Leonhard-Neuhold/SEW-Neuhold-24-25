@@ -2,4 +2,4 @@
 
 It is made made Leonhard Neuhold.
 
-[[!/img/image_readme.jpg]]
+[[!image_readme.jpg]]
