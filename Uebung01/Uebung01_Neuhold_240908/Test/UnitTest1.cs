@@ -23,12 +23,12 @@ public class Tests
         };
         _quackables2 = new ()
         {
-            new Mallardduck(),
-            new Redheadduck(),
-            new Decoyduck(),
-            new Rubberduck(),
-            new HonkAdapter(new Goose()),
-            new CackleAdapter(new Chicken())
+            new QuackCountDecorator(new Mallardduck()),
+            new QuackCountDecorator(new Redheadduck()),
+            new QuackCountDecorator(new Decoyduck()),
+            new QuackCountDecorator(new Rubberduck()),
+            new QuackCountDecorator(new HonkAdapter(new Goose())),
+            new QuackCountDecorator(new CackleAdapter(new Chicken()))
         };
         _flyables = new()
         {
@@ -85,9 +85,10 @@ public class Tests
     [Test]
     public void Count()
     {
-        var data = _count.Select(d => d.Quack()).ToList();
+        QuackCountDecorator.counter = 0;
+        var data = _quackables2.Select(d => d.Quack()).ToList();
         
-        Assert.That(data.Count, Is.EqualTo(4));
+        Assert.That(QuackCountDecorator.counter, Is.EqualTo(6));
     }
     
     [Test]
@@ -95,6 +96,6 @@ public class Tests
     {
         var data = _count.Select(d => d.QuackAndCount()).ToList();
         
-        Assert.That(data.Count, Is.EqualTo(4));
+        Assert.That(Counter.count, Is.EqualTo(4));
     }
 }

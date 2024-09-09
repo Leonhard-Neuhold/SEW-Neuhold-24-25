@@ -4,8 +4,6 @@ public abstract class ADuck : IFlyable, IQuackable
 {
     protected IQuackable _quackable;
     protected IFlyable _flyable;
-
-    public static int counter = 0;
     
     public ADuck(IQuackable quackable, IFlyable flyable)
     {
@@ -25,7 +23,6 @@ public abstract class ADuck : IFlyable, IQuackable
 
     public string Quack()
     {
-        counter++;
         return _quackable.Quack();
     }
 }

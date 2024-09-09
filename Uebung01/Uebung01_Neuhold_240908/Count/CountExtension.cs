@@ -2,13 +2,13 @@
 
 namespace Count;
 
-public static class CountExtension
+public static class Counter
 {
-    public static int Counter = 0;
+    public static int count = 0;
 
-    public static string QuackAndCount(this IQuackable _quackable)
+    public static string QuackAndCount(this IQuackable quackable)
     {
-        Counter++;
-        return _quackable.Quack();
+        count++;
+        return quackable.Quack();
     }
 }
