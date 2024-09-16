@@ -2,7 +2,7 @@
 
 public interface IState
 {
-    void CashIn(double cash);
-    void SelectTicket(Ticket ticket);
-    Ticket GetTicket(Ticket ticket);
+    string CashIn(double cash);
+    string SelectTicket(Ticket ticket);
+    void GetTicket();
 }

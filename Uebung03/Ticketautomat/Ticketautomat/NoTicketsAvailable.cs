@@ -9,18 +9,18 @@ public class NoTicketsAvailable : IState
         _ticketmachine = ticketmachine;
     }
 
-    public void CashIn(double cash)
+    public string CashIn(double cash)
     {
-        
+        return $"Already inserted cash!";
     }
 
-    public void SelectTicket(Ticket ticket)
+    public string SelectTicket(Ticket ticket)
     {
-        
+        return $"Already selected ticket!";
     }
 
-    public Ticket GetTicket(Ticket ticket)
+    public void GetTicket()
     {
-        return ticket;
+        
     }
 }

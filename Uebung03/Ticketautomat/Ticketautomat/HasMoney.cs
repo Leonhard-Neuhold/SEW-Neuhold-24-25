@@ -9,18 +9,19 @@ public class HasMoney : IState
         _ticketmachine = ticketmachine;
     }
 
-    public void CashIn(double cash)
+    public string CashIn(double cash)
     {
-        
+        return $"Already has enough Cash!";
     }
 
-    public void SelectTicket(Ticket ticket)
+    public string SelectTicket(Ticket ticket)
     {
-        
+        return $"Ticket already selected!";
     }
 
-    public Ticket GetTicket(Ticket ticket)
+    public void GetTicket()
     {
-        return ticket;
+        _ticketmachine.ReleaseTicket();
+        _ticketmachine.SelectedTicket = null;
     }
 }
