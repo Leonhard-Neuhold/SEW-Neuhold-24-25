@@ -6,14 +6,11 @@ namespace EntityFramework.Entities;
 [Table("BOOKS")]
 public class Book
 {
-    [DatabaseGenerated(DatabaseGeneratedOption.Identity), Column("ITEM_ID")]
-    public int Id { get; set; }
+    [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity), Column("BOOK_ID")]
+    public int BookId { get; set; }
     
     [Required, Column("TITLE")] 
     public string Title { get; set; }
-    
-    [Required, Column("AUTHOR")] 
-    public string Author { get; set; }
 
     [Required, Column("PUBLISHED_DATE")]
     public DateTime PublishedDate { get; set; }
@@ -21,6 +18,15 @@ public class Book
     [Required, Column("ISBN")]
     public string ISBN { get; set; }
 
-    [Required, Column("AVAILABLE_PRICE")]
-    public int AvailableCopies { get; set; }
+    
+    public BookDetail BookDetail { get; set; }
+
+    [Required, Column("BOOK_DETAIL_ID")]
+    public int BookDetailId { get; set; }
+
+
+    public Author Author { get; set; }
+
+    [Required, Column("AUTHOR_ID")]
+    public int AuthorId { get; set; }
 }
