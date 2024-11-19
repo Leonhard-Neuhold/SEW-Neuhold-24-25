@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EntityFramework.Migrations
 {
     [DbContext(typeof(LibraryContext))]
-    [Migration("20241113082504_relations")]
+    [Migration("20241119185409_relations")]
     partial class relations
     {
         /// <inheritdoc />
@@ -116,26 +116,21 @@ namespace EntityFramework.Migrations
                         .HasColumnType("datetime(6)")
                         .HasColumnName("LOAN_DATE");
 
-                    b.Property<DateTime>("ReturnDate")
+                    b.Property<DateTime?>("ReturnDate")
                         .HasColumnType("datetime(6)")
                         .HasColumnName("RETURN_DATE");
 
-                    b.Property<int>("ReturnLibrarianIdPerson_Id")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ReturnLibrarianPerson_Id")
-                        .HasColumnType("int");
+                    b.Property<int?>("ReturnLibrarianId")
+                        .HasColumnType("int")
+                        .HasColumnName("RETURN_LIBRARIAN_ID");
 
                     b.HasKey("BookId", "CustomerId");
 
                     b.HasIndex("CustomerId");
 
-                    b.HasIndex("LibrarianId")
-                        .IsUnique();
+                    b.HasIndex("LibrarianId");
 
-                    b.HasIndex("ReturnLibrarianIdPerson_Id");
-
-                    b.HasIndex("ReturnLibrarianPerson_Id");
+                    b.HasIndex("ReturnLibrarianId");
 
                     b.ToTable("BOOK_LOANS_JT");
                 });
@@ -300,22 +295,14 @@ namespace EntityFramework.Migrations
                         .IsRequired();
 
                     b.HasOne("EntityFramework.Entities.Librarian", "Librarian")
-                        .WithOne()
-                        .HasForeignKey("EntityFramework.Entities.BookLoan", "LibrarianId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("EntityFramework.Entities.Librarian", "ReturnLibrarianId")
                         .WithMany()
-                        .HasForeignKey("ReturnLibrarianIdPerson_Id")
+                        .HasForeignKey("LibrarianId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("EntityFramework.Entities.Librarian", "ReturnLibrarian")
                         .WithMany()
-                        .HasForeignKey("ReturnLibrarianPerson_Id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("ReturnLibrarianId");
 
                     b.Navigation("Book");
 
@@ -324,8 +311,6 @@ namespace EntityFramework.Migrations
                     b.Navigation("Librarian");
 
                     b.Navigation("ReturnLibrarian");
-
-                    b.Navigation("ReturnLibrarianId");
                 });
 
             modelBuilder.Entity("EntityFramework.Entities.Author", b =>

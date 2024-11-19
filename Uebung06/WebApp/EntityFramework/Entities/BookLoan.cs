@@ -28,15 +28,15 @@ public class BookLoan
     public Librarian Librarian { get; set; }
 
     [Required, Column("LIBRARIAN_ID")]
-    public int LibrarianId { get; set; }
+    public int LibrarianId { get; set; }    
 
 
     public Librarian ReturnLibrarian { get; set; }
 
     [Column("RETURN_LIBRARIAN_ID")]
-    public Librarian ReturnLibrarianId { get; set; }
+    public int? ReturnLibrarianId { get; set; }
 
     
     [Column("RETURN_DATE")]
-    public DateTime ReturnDate { get; set; }
+    public DateTime? ReturnDate { get; set; }
 }

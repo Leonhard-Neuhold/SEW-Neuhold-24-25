@@ -62,8 +62,8 @@ public class LibraryContext : DbContext
         
         modelBuilder.Entity<BookLoan>()
             .HasOne(bl => bl.Librarian)
-            .WithOne()
-            .HasForeignKey<BookLoan>(bl => bl.LibrarianId);
+            .WithMany()
+            .HasForeignKey(bl => bl.LibrarianId);
 
     }
 }

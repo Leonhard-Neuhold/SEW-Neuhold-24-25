@@ -151,9 +151,8 @@ namespace EntityFramework.Migrations
                     LOAN_DATE = table.Column<DateTime>(type: "datetime(6)", nullable: false),
                     DUE_DATE = table.Column<DateTime>(type: "datetime(6)", nullable: false),
                     LIBRARIAN_ID = table.Column<int>(type: "int", nullable: false),
-                    ReturnLibrarianPerson_Id = table.Column<int>(type: "int", nullable: false),
-                    ReturnLibrarianIdPerson_Id = table.Column<int>(type: "int", nullable: false),
-                    RETURN_DATE = table.Column<DateTime>(type: "datetime(6)", nullable: false)
+                    RETURN_LIBRARIAN_ID = table.Column<int>(type: "int", nullable: true),
+                    RETURN_DATE = table.Column<DateTime>(type: "datetime(6)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -177,17 +176,10 @@ namespace EntityFramework.Migrations
                         principalColumn: "PERSON_ID",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_BOOK_LOANS_JT_LIBRARIANS_ReturnLibrarianIdPerson_Id",
-                        column: x => x.ReturnLibrarianIdPerson_Id,
+                        name: "FK_BOOK_LOANS_JT_LIBRARIANS_RETURN_LIBRARIAN_ID",
+                        column: x => x.RETURN_LIBRARIAN_ID,
                         principalTable: "LIBRARIANS",
-                        principalColumn: "PERSON_ID",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_BOOK_LOANS_JT_LIBRARIANS_ReturnLibrarianPerson_Id",
-                        column: x => x.ReturnLibrarianPerson_Id,
-                        principalTable: "LIBRARIANS",
-                        principalColumn: "PERSON_ID",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "PERSON_ID");
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
@@ -199,18 +191,12 @@ namespace EntityFramework.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_BOOK_LOANS_JT_LIBRARIAN_ID",
                 table: "BOOK_LOANS_JT",
-                column: "LIBRARIAN_ID",
-                unique: true);
+                column: "LIBRARIAN_ID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_BOOK_LOANS_JT_ReturnLibrarianIdPerson_Id",
+                name: "IX_BOOK_LOANS_JT_RETURN_LIBRARIAN_ID",
                 table: "BOOK_LOANS_JT",
-                column: "ReturnLibrarianIdPerson_Id");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_BOOK_LOANS_JT_ReturnLibrarianPerson_Id",
-                table: "BOOK_LOANS_JT",
-                column: "ReturnLibrarianPerson_Id");
+                column: "RETURN_LIBRARIAN_ID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_BOOKS_AUTHOR_ID",
