@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GabrielTest", "GabrielTest\GabrielTest.csproj", "{A6E824A3-6029-4ACF-9575-DBBAEFDFD018}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorApp1", "BlazorApp1\BlazorApp1.csproj", "{292A6EDC-BA3D-4260-8EB5-B44A893F250F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A6E824A3-6029-4ACF-9575-DBBAEFDFD018}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6E824A3-6029-4ACF-9575-DBBAEFDFD018}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6E824A3-6029-4ACF-9575-DBBAEFDFD018}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6E824A3-6029-4ACF-9575-DBBAEFDFD018}.Release|Any CPU.Build.0 = Release|Any CPU
+		{292A6EDC-BA3D-4260-8EB5-B44A893F250F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{292A6EDC-BA3D-4260-8EB5-B44A893F250F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{292A6EDC-BA3D-4260-8EB5-B44A893F250F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{292A6EDC-BA3D-4260-8EB5-B44A893F250F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
