@@ -7,10 +7,11 @@ Cook hakan = new Cook("Hakan");
 Cashier ali = new Cashier("Ali");
 
 new Thread(new Customer("chefe").Run).Start();
+new Thread(new Customer("customer").Run).Start();
 
-abdul.Run();
-hakan.Run();
-ali.Run();
+new Thread(abdul.Run).Start();
+new Thread(hakan.Run).Start();
+new Thread(ali.Run).Start();
 
 
 
@@ -31,6 +32,8 @@ class Customer(string name) : Person(name)
             Cook.SemCook.Release();
             SemCustomer.Wait();
             Pay();
+            Cashier.SemCashier.Release();
+            SemCustomer.Wait();
         }
     }
 
@@ -57,6 +60,7 @@ class Cashier(string name) : Person(name)
         {
             SemCashier.Wait();
             Confirm();
+            Customer.SemCustomer.Release();
         }
     }
 
@@ -77,7 +81,6 @@ class Cook(string name) : Person(name)
         {
             SemCook.Wait();
             PrepareMeal();
-            Cashier.SemCashier.Release();
             Customer.SemCustomer.Release();
         }
     }
