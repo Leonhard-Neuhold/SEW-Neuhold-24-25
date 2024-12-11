@@ -8,6 +8,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarsMission", "MarsMission\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kebap", "Kebap\Kebap.csproj", "{158A5AF8-B619-49BE-B3B7-65683113586F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Race", "Race\Race.csproj", "{079659D9-08D1-4C15-ACF7-D90933707C7B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Harbour", "Harbour\Harbour.csproj", "{68D10157-63E9-4F5F-ACDF-A6F974D527A2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +34,13 @@ Global
 		{158A5AF8-B619-49BE-B3B7-65683113586F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{158A5AF8-B619-49BE-B3B7-65683113586F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{158A5AF8-B619-49BE-B3B7-65683113586F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{079659D9-08D1-4C15-ACF7-D90933707C7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{079659D9-08D1-4C15-ACF7-D90933707C7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{079659D9-08D1-4C15-ACF7-D90933707C7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{079659D9-08D1-4C15-ACF7-D90933707C7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68D10157-63E9-4F5F-ACDF-A6F974D527A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68D10157-63E9-4F5F-ACDF-A6F974D527A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68D10157-63E9-4F5F-ACDF-A6F974D527A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68D10157-63E9-4F5F-ACDF-A6F974D527A2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
